@@ -57,9 +57,11 @@ app.post('/api/merge', upload.fields([
           if (!newCargoXML) {
             newCargoXML = result;
           }
-          result.Cargo.ItemCargo.forEach(item => {
-            itemsCargo.push(item)
-          })
+          if (result.Cargo.ItemCargo) {
+            result.Cargo.ItemCargo.forEach(item => {
+              itemsCargo.push(item)
+            })
+          }
         });
       })
       newCargoXML.Cargo.ItemCargo = itemsCargo;
@@ -82,9 +84,11 @@ app.post('/api/merge', upload.fields([
           if (!newClasseNivelFaixa) {
             newClasseNivelFaixa = result;
           }
-          result.ClasseNivelFaixa.ItemClasseNivelFaixa.forEach(item => {
-            itemsClasseNivelFaixa.push(item)
-          })
+          if (result.ClasseNivelFaixa.ItemClasseNivelFaixa) {
+            result.ClasseNivelFaixa.ItemClasseNivelFaixa.forEach(item => {
+              itemsClasseNivelFaixa.push(item)
+            })
+          }
         });
       })
       newClasseNivelFaixa.ClasseNivelFaixa.ItemClasseNivelFaixa = itemsClasseNivelFaixa;
@@ -107,9 +111,11 @@ app.post('/api/merge', upload.fields([
           if (!newCodigoVantagemDesconto) {
             newCodigoVantagemDesconto = result;
           }
-          result.CodigoVantagemDesconto.ItemCodigoVantagemDesconto.forEach(item => {
-            itemsCodigoVantagemDesconto.push(item)
-          })
+          if (result.CodigoVantagemDesconto.ItemCodigoVantagemDesconto) {
+            result.CodigoVantagemDesconto.ItemCodigoVantagemDesconto.forEach(item => {
+              itemsCodigoVantagemDesconto.push(item)
+            })
+          }
         });
       })
       newCodigoVantagemDesconto.CodigoVantagemDesconto.ItemCodigoVantagemDesconto = itemsCodigoVantagemDesconto;
@@ -132,9 +138,11 @@ app.post('/api/merge', upload.fields([
           if (!newDependente) {
             newDependente = result;
           }
-          result.Dependente.ItemDependente.forEach(item => {
-            itemsDependente.push(item)
-          })
+          if (result.Dependente.ItemDependente) {
+            result.Dependente.ItemDependente.forEach(item => {
+              itemsDependente.push(item)
+            })
+          }
         });
       })
       newDependente.Dependente.ItemDependente = itemsDependente;
@@ -157,9 +165,11 @@ app.post('/api/merge', upload.fields([
           if (!newFolhaPagamento) {
             newFolhaPagamento = result;
           }
-          result.FolhaPagamento.ItemFolha.forEach(item => {
-            itemsFolhaPagamento.push(item)
-          })
+          if (result.FolhaPagamento.ItemFolha){
+            result.FolhaPagamento.ItemFolha.forEach(item => {
+              itemsFolhaPagamento.push(item)
+            })
+          }
         });
       })
       newFolhaPagamento.FolhaPagamento.ItemFolha = itemsFolhaPagamento;
@@ -182,9 +192,11 @@ app.post('/api/merge', upload.fields([
           if (!newHistoricoFuncional) {
             newHistoricoFuncional = result;
           }
-          result.HistoricoFuncional.ItemHistoricoFuncional.forEach(item => {
-            itemsHistoricoFuncional.push(item)
-          })
+          if (result.HistoricoFuncional.ItemHistoricoFuncional) {
+            result.HistoricoFuncional.ItemHistoricoFuncional.forEach(item => {
+              itemsHistoricoFuncional.push(item)
+            })
+          }
         });
       })
       newHistoricoFuncional.HistoricoFuncional.ItemHistoricoFuncional = itemsHistoricoFuncional;
@@ -207,9 +219,11 @@ app.post('/api/merge', upload.fields([
           if (!newLotacao) {
             newLotacao = result;
           }
-          result.Lotacao.ItemLotacao.forEach(item => {
-            itemsLotacao.push(item)
-          })
+          if (result.Lotacao.ItemLotacao) {
+            result.Lotacao.ItemLotacao.forEach(item => {
+              itemsLotacao.push(item)
+            })
+          }
         });
       })
       newLotacao.Lotacao.ItemLotacao = itemsLotacao;
@@ -232,9 +246,11 @@ app.post('/api/merge', upload.fields([
           if (!newServidor) {
             newServidor = result;
           }
-          result.Servidor.ItemServidor.forEach(item => {
-            itemsServidor.push(item)
-          })
+          if (result.Servidor.ItemServidor) {
+            result.Servidor.ItemServidor.forEach(item => {
+              itemsServidor.push(item)
+            })
+          }
         });
       })
       newServidor.Servidor.ItemServidor = itemsServidor;
@@ -257,9 +273,11 @@ app.post('/api/merge', upload.fields([
           if (!newVantagemDesconto) {
             newVantagemDesconto = result;
           }
-          result.VantagemDesconto.ItemVantagemDesconto.forEach(item => {
-            itemsVantagemDesconto.push(item)
-          })
+          if (result.VantagemDesconto.ItemVantagemDesconto) {
+            result.VantagemDesconto.ItemVantagemDesconto.forEach(item => {
+              itemsVantagemDesconto.push(item)
+            })
+          }
         });
       })
       newVantagemDesconto.VantagemDesconto.ItemVantagemDesconto = itemsVantagemDesconto;
@@ -282,9 +300,11 @@ app.post('/api/merge', upload.fields([
           if (!newVinculo) {
             newVinculo = result;
           }
-          result.Vinculo.ItemVinculo.forEach(item => {
-            itemsVinculo.push(item)
-          })
+          if (result.Vinculo.ItemVinculo){
+            result.Vinculo.ItemVinculo.forEach(item => {
+              itemsVinculo.push(item)
+            })
+          }
         });
       })
       newVinculo.Vinculo.ItemVinculo = itemsVinculo;
