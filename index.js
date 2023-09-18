@@ -68,7 +68,9 @@ app.post('/api/merge', upload.fields([
         
         const builder = new xml2js.Builder();
         let modifiedXmlString = builder.buildObject(newCargoXML);
-        modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+        if (!!modifiedXmlString.length) {
+          modifiedXmlString = modifiedXmlString.replaceAl('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+        }
         modifiedXmlBufferCargo = Buffer.from(modifiedXmlString, 'binary');
     }
     if (fileName === 'ClasseNivelFaixa.xml') {
@@ -96,7 +98,9 @@ app.post('/api/merge', upload.fields([
       
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newClasseNivelFaixa);
-      modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      if (!!modifiedXmlString.length) {
+        modifiedXmlString = modifiedXmlString.replaceAl('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      }
       modifiedXmlBufferClasseNivelFaixa = Buffer.from(modifiedXmlString, 'binary');
     }
     if (fileName === 'CodigoVantagemDesconto.xml') {
@@ -124,7 +128,9 @@ app.post('/api/merge', upload.fields([
       
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newCodigoVantagemDesconto);
-      modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      if (!!modifiedXmlString.length) {
+        modifiedXmlString = modifiedXmlString.replaceAl('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      }
       modifiedXmlBufferCodigoVantagemDesconto = Buffer.from(modifiedXmlString, 'binary');
     }
     if (fileName === 'Dependente.xml') {
@@ -152,7 +158,9 @@ app.post('/api/merge', upload.fields([
       
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newDependente);
-      modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      if (!!modifiedXmlString.length) {
+        modifiedXmlString = modifiedXmlString.replaceAl('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      }
       modifiedXmlBufferDependente = Buffer.from(modifiedXmlString, 'binary');
     }
     if (fileName === 'FolhaPagamento.xml') {
@@ -180,7 +188,9 @@ app.post('/api/merge', upload.fields([
       
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newFolhaPagamento);
-      modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      if (!!modifiedXmlString.length) {
+        modifiedXmlString = modifiedXmlString.replaceAl('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      }
       modifiedXmlBufferFolhaPagamento = Buffer.from(modifiedXmlString, 'binary');
     }
     if (fileName === 'HistoricoFuncional.xml') {
@@ -208,7 +218,9 @@ app.post('/api/merge', upload.fields([
       
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newHistoricoFuncional);
-      modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      if (!!modifiedXmlString.length) {
+        modifiedXmlString = modifiedXmlString.replaceAl('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      }
       modifiedXmlBufferHistoricoFuncional = Buffer.from(modifiedXmlString, 'binary');
     }
     if (fileName === 'Lotacao.xml') {
@@ -236,7 +248,9 @@ app.post('/api/merge', upload.fields([
       
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newLotacao);
-      modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      if (!!modifiedXmlString.length) {
+        modifiedXmlString = modifiedXmlString.replaceAl('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      }
       modifiedXmlBufferLotacao = Buffer.from(modifiedXmlString, 'binary');
     }
     if (fileName === 'Servidor.xml') {
@@ -264,7 +278,9 @@ app.post('/api/merge', upload.fields([
       
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newServidor);
-      modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      if (!!modifiedXmlString.length) {
+        modifiedXmlString = modifiedXmlString.replaceAl('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      }
       modifiedXmlBufferServidor = Buffer.from(modifiedXmlString, 'binary');
     }
     if (fileName === 'VantagemDesconto.xml') {
@@ -292,7 +308,9 @@ app.post('/api/merge', upload.fields([
       
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newVantagemDesconto);
-      modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      if (!!modifiedXmlString.length) {
+        modifiedXmlString = modifiedXmlString.replaceAl('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      }
       modifiedXmlBufferVantagemDesconto = Buffer.from(modifiedXmlString, 'binary');
     }
     if (fileName === 'Vinculo.xml') {
@@ -320,7 +338,9 @@ app.post('/api/merge', upload.fields([
       
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newVinculo);
-      modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      if (!!modifiedXmlString.length) {
+        modifiedXmlString = modifiedXmlString.replaceAl('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+      }
       modifiedXmlBufferVinculo = Buffer.from(modifiedXmlString, 'binary');
     }
     
