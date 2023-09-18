@@ -13,6 +13,13 @@ app.use(express.urlencoded({ extended: true }));
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
+function replaceAll(str, find, replace) {
+  // Escape special characters in 'find' to ensure it's treated as a literal string
+  find = find.replace(/([.*+?^=!:${}()|[\]/\\])/g, "\\$1");
+  const regex = new RegExp(find, 'g');
+  return str.replace(regex, replace);
+}
+
 app.post('/api/merge', upload.fields([
   { name: 'file1' },
   { name: 'file2' },
@@ -69,7 +76,7 @@ app.post('/api/merge', upload.fields([
         const builder = new xml2js.Builder();
         let modifiedXmlString = builder.buildObject(newCargoXML);
         if (!!modifiedXmlString.length) {
-          modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+          modifiedXmlString = replaceAll(modifiedXmlString, '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
         }
         modifiedXmlBufferCargo = Buffer.from(modifiedXmlString, 'binary');
     }
@@ -99,7 +106,7 @@ app.post('/api/merge', upload.fields([
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newClasseNivelFaixa);
       if (!!modifiedXmlString.length) {
-        modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+        modifiedXmlString = replaceAll(modifiedXmlString, '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
       }
       modifiedXmlBufferClasseNivelFaixa = Buffer.from(modifiedXmlString, 'binary');
     }
@@ -129,7 +136,7 @@ app.post('/api/merge', upload.fields([
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newCodigoVantagemDesconto);
       if (!!modifiedXmlString.length) {
-        modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+        modifiedXmlString = replaceAll(modifiedXmlString, '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
       }
       modifiedXmlBufferCodigoVantagemDesconto = Buffer.from(modifiedXmlString, 'binary');
     }
@@ -159,7 +166,7 @@ app.post('/api/merge', upload.fields([
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newDependente);
       if (!!modifiedXmlString.length) {
-        modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+        modifiedXmlString = replaceAll(modifiedXmlString, '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
       }
       modifiedXmlBufferDependente = Buffer.from(modifiedXmlString, 'binary');
     }
@@ -189,7 +196,7 @@ app.post('/api/merge', upload.fields([
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newFolhaPagamento);
       if (!!modifiedXmlString.length) {
-        modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+        modifiedXmlString = replaceAll(modifiedXmlString, '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
       }
       modifiedXmlBufferFolhaPagamento = Buffer.from(modifiedXmlString, 'binary');
     }
@@ -219,7 +226,7 @@ app.post('/api/merge', upload.fields([
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newHistoricoFuncional);
       if (!!modifiedXmlString.length) {
-        modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+        modifiedXmlString = replaceAll(modifiedXmlString, '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
       }
       modifiedXmlBufferHistoricoFuncional = Buffer.from(modifiedXmlString, 'binary');
     }
@@ -249,7 +256,7 @@ app.post('/api/merge', upload.fields([
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newLotacao);
       if (!!modifiedXmlString.length) {
-        modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+        modifiedXmlString = replaceAll(modifiedXmlString, '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
       }
       modifiedXmlBufferLotacao = Buffer.from(modifiedXmlString, 'binary');
     }
@@ -279,7 +286,7 @@ app.post('/api/merge', upload.fields([
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newServidor);
       if (!!modifiedXmlString.length) {
-        modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+        modifiedXmlString = replaceAll(modifiedXmlString, '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
       }
       modifiedXmlBufferServidor = Buffer.from(modifiedXmlString, 'binary');
     }
@@ -309,7 +316,7 @@ app.post('/api/merge', upload.fields([
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newVantagemDesconto);
       if (!!modifiedXmlString.length) {
-        modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+        modifiedXmlString = replaceAll(modifiedXmlString, '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
       }
       modifiedXmlBufferVantagemDesconto = Buffer.from(modifiedXmlString, 'binary');
     }
@@ -339,7 +346,7 @@ app.post('/api/merge', upload.fields([
       const builder = new xml2js.Builder();
       let modifiedXmlString = builder.buildObject(newVinculo);
       if (!!modifiedXmlString.length) {
-        modifiedXmlString = modifiedXmlString.replaceAll('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
+        modifiedXmlString = replaceAll(modifiedXmlString, '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>', '<?xml version="1.0" encoding="ISO-8859-1"?>')
       }
       modifiedXmlBufferVinculo = Buffer.from(modifiedXmlString, 'binary');
     }
